@@ -154,7 +154,7 @@
 
         <!-- Hero Content -->
         <div class="relative z-10 text-center -mt-20">
-            <h1 class="text-[8rem] font-[200] text-white uppercase leading-none tracking-[15px] drop-shadow-2xl">
+            <h1 class="text-6xl md:text-[9rem] font-script text-white text-center leading-none drop-shadow-2xl">
                 Advisor
             </h1>
         </div>
@@ -164,7 +164,7 @@
 
             <!-- White Curve Container -->
             <div
-                class="absolute bottom-0 left-0 w-[55%] h-full bg-white custom-curve flex items-center pl-8 pr-24 pointer-events-auto shadow-[10px_-5px_25px_rgba(0,0,0,0.05)] overflow-hidden">
+                class="absolute bottom-0 left-0 w-[50%] md:w-[55%] h-full bg-white custom-curve flex items-center pl-2 md:pl-8 pr-8 md:pr-24 pointer-events-auto shadow-[10px_-5px_25px_rgba(0,0,0,0.05)] overflow-hidden">
                 <!-- Logos -->
                 <div class="w-full overflow-hidden marquee-container">
                     <div class="flex gap-16 animate-scroll w-max items-center">
@@ -192,14 +192,16 @@
             </div>
 
             <!-- Floating Stats -->
-            <div class="absolute bottom-[30px] right-[10%] pointer-events-auto flex items-center gap-4 text-white">
+            <!-- Floating Stats -->
+            <div
+                class="absolute bottom-[30px] right-0 md:right-[10%] left-auto translate-x-0 pointer-events-auto flex items-center gap-2 md:gap-4 text-white min-w-max">
                 <div
-                    class="w-16 h-16 rounded-full bg-accent flex items-center justify-center text-primary-dark text-2xl shadow-glow transition-transform hover:scale-110 cursor-pointer">
+                    class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-accent flex items-center justify-center text-primary-dark text-lg md:text-2xl shadow-glow transition-transform hover:scale-110 cursor-pointer">
                     <i class="fa-solid fa-star"></i>
                 </div>
                 <div class="text-left">
-                    <div class="text-[2.5rem] font-bold leading-none">139+</div>
-                    <div class="text-sm opacity-80">Client Satisfaction</div>
+                    <div class="text-xl md:text-3xl font-bold">139+</div>
+                    <div class="text-[0.6rem] md:text-sm uppercase tracking-wider">Client Satisfaction</div>
                 </div>
             </div>
 
