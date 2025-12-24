@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Services - Advisor</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0f2e1b',
+                        'primary': '#1a4d2e',
+                        'primary-light': '#4f7e5f',
+                        'accent': '#d4e157',
+                        'accent-light': '#cedd9a',
+                        'text-dark': '#121212',
+                        'text-muted': '#888888',
+                        'light-bg': '#f9f9f9',
+                    },
+                    fontFamily: {
+                        'sans': ['Lexend', 'sans-serif'],
+                        'script': ['Dancing Script', 'cursive'],
+                    },
+                    boxShadow: {
+                        'soft': '0 5px 20px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 30px rgba(0, 0, 0, 0.08)',
+                        'glow': '0 0 20px rgba(212, 225, 87, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-text-dark antialiased bg-white selection:bg-accent selection:text-primary-dark">
+
+    <!-- Header (Copied from index.html) -->
+    <header class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-300">
+        <nav
+            class="relative flex justify-between items-center bg-white/90 backdrop-blur-md px-8 py-3 rounded-full max-w-5xl mx-4 lg:mx-auto shadow-soft border border-white/20">
+            <a href="index.html" class="font-bold text-xl uppercase tracking-wide text-primary-dark">
+                A<span class="text-primary">D</span>VISOR
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">Services</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">Case Study</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:block bg-primary text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md">
+                    Get in Touch
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-primary-dark text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu"
+                class="absolute top-full left-0 w-full bg-white rounded-2xl shadow-lg mt-2 p-6 hidden flex-col gap-4 text-center transform origin-top transition-all duration-300 z-50 border border-gray-100">
+                <a href="index.html" class="text-text-dark font-medium hover:text-primary transition-colors">Home</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">About</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Services</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Case Study</a>
+                <button
+                    class="bg-primary text-white text-sm font-semibold py-3 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md w-full">
+                    Get in Touch
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        }
+    </script>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-10">
+            <h1 class="text-6xl md:text-8xl font-black text-primary-dark uppercase leading-[0.9]">
+                Translation<br>Services
+            </h1>
+            <p class="text-text-muted text-sm max-w-xs text-right uppercase tracking-wider mb-2">
+                Certified translations for legal,<br>technical, and business documents.
+            </p>
+        </div>
+    </section>
+
+    <!-- Dark Feature Section -->
+    <section class="bg-primary-dark text-white py-24">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16">
+            <!-- Left: Placeholder/Image Card -->
+            <div class="bg-gray-300 rounded-[3rem] w-full h-[500px] lg:h-auto"></div>
+
+            <!-- Right: Services List -->
+            <div class="flex flex-col justify-center gap-12">
+                <!-- Item 1 -->
+                <div class="group cursor-pointer">
+                    <div class="flex justify-between items-start border-t border-white/20 pt-8 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-[#cedd9a] flex items-center justify-center text-primary-dark text-xl mb-4">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Legal Documents</h3>
+                    <p class="text-white/60 text-xs leading-relaxed max-w-md mb-4 bg-transparent">
+                        Contracts, Memorandum of Association (MOA), Power of Attorney (POA), Board Resolutions (BOR),
+                        court documents, and other official papers.
+                    </p>
+                    <div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-arrow-right-long text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group cursor-pointer">
+                    <div class="flex justify-between items-start border-t border-white/20 pt-8 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-[#cedd9a] flex items-center justify-center text-primary-dark text-xl mb-4">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Technical Documents</h3>
+                    <p class="text-white/60 text-xs leading-relaxed max-w-md mb-4 bg-transparent">
+                        Manuals, specifications, reports, and industry-specific documentation requiring precise
+                        terminology.
+                    </p>
+                    <div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-arrow-right-long text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group cursor-pointer">
+                    <div class="flex justify-between items-start border-t border-white/20 pt-8 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-[#cedd9a] flex items-center justify-center text-primary-dark text-xl mb-4">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase mb-2">Business Documents</h3>
+                    <p class="text-white/60 text-xs leading-relaxed max-w-md mb-4 bg-transparent">
+                        Agreements, proposals, presentations, marketing materials, and corporate communications.
+                    </p>
+                    <div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-arrow-right-long text-xl"></i>
+                    </div>
+                </div>
+                <div class="border-b border-white/20 w-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- We Work With Section -->
+    <section class="py-32 bg-white text-center">
+        <div class="max-w-4xl mx-auto px-6 mb-20">
+            <h2 class="text-xl md:text-2xl font-normal text-gray-500 uppercase leading-relaxed tracking-wide">
+                <span class="font-script text-6xl text-[#cedd9a] normal-case mr-2">We</span> work with multiple
+                languages and guarantee that every translation is handled by qualified professionals who understand both
+                linguistic nuances and legal requirements. Whether you need translations for government submissions,
+                visa applications, or international business dealings, we ensure your documents are accepted by relevant
+                authorities.
+            </h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Feature 1 -->
+            <div class="flex flex-col items-center">
+                <div
+                    class="w-24 h-24 rounded-full bg-[#cedd9a]/40 flex items-center justify-center text-4xl text-primary-dark mb-6">
+                    <i class="fa-solid fa-file-certificate"></i>
+                </div>
+                <h3 class="text-xs font-bold uppercase tracking-widest max-w-[200px]">Certified and Legally Recognised
+                    Translations</h3>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex flex-col items-center">
+                <div
+                    class="w-24 h-24 rounded-full bg-[#cedd9a]/40 flex items-center justify-center text-4xl text-primary-dark mb-6">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+                <h3 class="text-xs font-bold uppercase tracking-widest max-w-[200px]">Fast Turnaround Times Without
+                    Compromising Quality</h3>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex flex-col items-center">
+                <div
+                    class="w-24 h-24 rounded-full bg-[#cedd9a]/40 flex items-center justify-center text-4xl text-primary-dark mb-6">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h3 class="text-xs font-bold uppercase tracking-widest max-w-[200px]">Confidential Handling of Sensitive
+                    Information</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+                <div class="md:col-span-1">
+                    <a href="#" class="font-bold text-2xl uppercase tracking-wide text-primary-dark block mb-6">
+                        A<span class="text-primary">D</span>VISOR.
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-[200px]">
+                        We offer a comprehensive range of consulting services to meet needs.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xs text-gray-400 uppercase tracking-widest mb-6">Company</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xs text-gray-400 uppercase tracking-widest mb-6">Support</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">404</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-1">
+                    <h4 class="font-bold text-lg text-primary-dark uppercase mb-2">Subscribe to our newsletter</h4>
+                    <p class="text-gray-400 text-xs mb-6">Creative thinkers work collaboratively to bring</p>
+                    <div class="flex border border-gray-200 p-1 rounded-sm">
+                        <input type="email" placeholder="Enter Elements Address"
+                            class="flex-1 px-3 text-sm outline-none text-gray-600 placeholder:text-gray-300">
+                        <button
+                            class="bg-[#cedd9a] text-primary-dark text-xs font-bold px-6 py-2 rounded-sm hover:bg-accent transition-colors">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-8"></div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
