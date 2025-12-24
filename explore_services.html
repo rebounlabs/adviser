@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore All Services - Advisor</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0f2e1b',
+                        'primary': '#1a4d2e',
+                        'primary-light': '#4f7e5f',
+                        'accent': '#d4e157',
+                        'accent-light': '#cedd9a',
+                        'text-dark': '#121212',
+                        'text-muted': '#888888',
+                        'light-bg': '#f9f9f9',
+                    },
+                    fontFamily: {
+                        'sans': ['Lexend', 'sans-serif'],
+                        'script': ['Dancing Script', 'cursive'],
+                    },
+                    boxShadow: {
+                        'soft': '0 5px 20px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 30px rgba(0, 0, 0, 0.08)',
+                        'glow': '0 0 20px rgba(212, 225, 87, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-text-dark antialiased bg-white selection:bg-accent selection:text-primary-dark">
+
+    <!-- Header (Copied from index.html) -->
+    <header class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-300">
+        <nav
+            class="relative flex justify-between items-center bg-white/90 backdrop-blur-md px-8 py-3 rounded-full max-w-5xl mx-4 lg:mx-auto shadow-soft border border-white/20">
+            <a href="index.html" class="font-bold text-xl uppercase tracking-wide text-primary-dark">
+                A<span class="text-primary">D</span>VISOR
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">Services</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">Case Study</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:block bg-primary text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md">
+                    Get in Touch
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-primary-dark text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu"
+                class="absolute top-full left-0 w-full bg-white rounded-2xl shadow-lg mt-2 p-6 hidden flex-col gap-4 text-center transform origin-top transition-all duration-300 z-50 border border-gray-100">
+                <a href="index.html" class="text-text-dark font-medium hover:text-primary transition-colors">Home</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">About</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Services</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Case Study</a>
+                <button
+                    class="bg-primary text-white text-sm font-semibold py-3 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md w-full">
+                    Get in Touch
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        }
+    </script>
+
+    <main class="max-w-7xl mx-auto px-6 pt-32 pb-24">
+
+        <!-- Hero Box -->
+        <div
+            class="bg-[#cedd9a] rounded-[3rem] p-12 md:p-20 mb-16 flex flex-col md:flex-row justify-between items-start">
+            <h1 class="text-5xl md:text-7xl font-black text-primary-dark uppercase leading-none max-w-2xl">
+                Explore All<br>Services
+            </h1>
+            <div
+                class="text-[0.6rem] md:text-[0.7rem] uppercase text-primary-dark/60 text-right leading-tight self-start mt-4 md:mt-0">
+                INDUSTRY EXPERTISE: LEGAL<br>
+                CORPORATE BUSINESS | SHELL<br>
+                MORTGAGE | REAL ESTATE | EDUCATION
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+            <!-- Left Column: Why Choose & Illustration -->
+            <div class="flex flex-col gap-20">
+
+                <!-- Why Choose List -->
+                <div>
+                    <h2 class="text-2xl font-bold uppercase text-primary-dark mb-8">
+                        Why Choose <span class="font-script text-4xl text-gray-400 normal-case mx-2">Us?</span>
+                    </h2>
+
+                    <div class="space-y-4">
+                        <div class="bg-primary-dark text-white py-4 px-8 rounded-full text-sm font-medium shadow-md">
+                            Expert Team with Legal Knowledge
+                        </div>
+                        <div
+                            class="bg-[#cedd9a] text-primary-dark py-4 px-8 rounded-full text-sm font-medium shadow-md">
+                            Cost Control Templated
+                        </div>
+                        <div class="bg-primary-dark text-white py-4 px-8 rounded-full text-sm font-medium shadow-md">
+                            Global Compliance Standards
+                        </div>
+                        <div
+                            class="bg-[#cedd9a] text-primary-dark py-4 px-8 rounded-full text-sm font-medium shadow-md">
+                            Teamwork & A Virtual Professional
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Illustration Section -->
+                <div>
+                    <h2 class="text-3xl font-black text-primary-dark mb-4">
+                        Let's Make the<br>Problem Nervous
+                    </h2>
+                    <p class="text-xs text-gray-500 mb-8 max-w-xs">
+                        We solve the problem so well that it fills your lead competitor with advantage.
+                    </p>
+
+                    <!-- Abstract Illustration Representation -->
+                    <div class="relative w-full aspect-square max-w-sm mx-auto">
+                        <!-- Phones/Hands Illustration (Using Font Awesome icons composed together as a placeholder for the elaborate graphic) -->
+                        <div class="text-9xl text-primary-dark flex justify-center items-center gap-[-20px]">
+                            <i class="fa-solid fa-mobile-screen transform -rotate-12 translate-x-4"></i>
+                            <i class="fa-solid fa-handshake text-[#cedd9a] text-7xl absolute z-10"></i>
+                            <i class="fa-solid fa-mobile-screen transform rotate-12 -translate-x-4"></i>
+                        </div>
+                        <!-- Decorative Elements -->
+                        <div class="absolute top-0 right-0 text-3xl text-[#cedd9a] animate-bounce"><i
+                                class="fa-solid fa-check-circle"></i></div>
+                        <div class="absolute bottom-0 left-0 text-3xl text-[#cedd9a]"><i
+                                class="fa-regular fa-square"></i></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Get In Touch & Forms -->
+            <div class="flex flex-col gap-8">
+
+                <!-- Get In Touch Box -->
+                <div class="bg-[#eff5f0] p-12 rounded-[3rem] text-center">
+                    <h2 class="text-3xl font-black uppercase text-primary-dark mb-8">
+                        Get In<br>Touch
+                    </h2>
+                    <p class="text-xs font-bold text-gray-500 uppercase leading-relaxed max-w-xs mx-auto mb-10">
+                        We're here to assist you with all your legal documentation, visas, business and administrative
+                        needs.
+                    </p>
+                    <div class="flex justify-center gap-4">
+                        <button
+                            class="bg-primary-dark text-white py-3 px-8 rounded-full text-sm font-bold hover:bg-black transition-colors">Email</button>
+                        <button
+                            class="bg-[#cedd9a] text-primary-dark py-3 px-8 rounded-full text-sm font-bold hover:bg-[#dbe7cd] transition-colors">Phone</button>
+                    </div>
+                </div>
+
+                <!-- Price Calculator -->
+                <div class="bg-primary-dark p-8 rounded-[2rem] text-white">
+                    <h3 class="text-xl font-bold uppercase mb-8">Price Estimation<br>Calculator</h3>
+
+                    <!-- Fake Graph Visualization -->
+                    <div class="h-24 flex items-end justify-between gap-1 mb-2 opacity-50">
+                        <div class="w-1 bg-[#cedd9a] h-[20%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[40%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[30%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[60%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[50%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[80%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[70%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[40%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[90%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[60%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[30%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[50%]"></div>
+                        <div class="w-1 bg-[#cedd9a] h-[20%]"></div>
+                    </div>
+                    <!-- Slider Line -->
+                    <div class="w-full h-1 bg-white/20 rounded-full mb-8 relative">
+                        <div
+                            class="absolute top-1/2 -translate-y-1/2 left-[30%] w-4 h-4 bg-[#cedd9a] rounded-full shadow-glow">
+                        </div>
+                        <div class="absolute top-1/2 -translate-y-1/2 left-0 w-[30%] h-1 bg-[#cedd9a] rounded-full">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-end">
+                        <span class="text-[0.6rem] uppercase tracking-wider text-white/60">Est. Price: $1,200</span>
+                        <button
+                            class="bg-[#cedd9a] text-primary-dark py-2 px-6 rounded-full text-xs font-bold hover:bg-white transition-colors">Calculate</button>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-primary-dark p-8 rounded-[2rem] text-white">
+                    <form class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Full name*"
+                                class="w-full bg-transparent border-b border-white/20 py-2 text-sm focus:outline-none focus:border-[#cedd9a] transition-colors placeholder:text-white/40">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email*"
+                                class="w-full bg-transparent border-b border-white/20 py-2 text-sm focus:outline-none focus:border-[#cedd9a] transition-colors placeholder:text-white/40">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Message*"
+                                class="w-full bg-transparent border-b border-white/20 py-2 text-sm focus:outline-none focus:border-[#cedd9a] transition-colors placeholder:text-white/40">
+                        </div>
+                        <div class="flex justify-end pt-4">
+                            <button
+                                class="bg-[#cedd9a] text-primary-dark py-2 px-8 rounded-full text-xs font-bold hover:bg-white transition-colors">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer (From index.html) -->
+    <section class="pb-0">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-accent-light py-20 text-center rounded-[20px] mb-12">
+                <h2 class="text-[3rem] font-[300] text-primary-dark mb-8 leading-tight">LET'S WORK<br>TOGETHER</h2>
+                <button
+                    class="bg-primary-dark text-white py-4 px-10 rounded-full text-base hover:bg-black transition-colors">Start
+                    a Project</button>
+            </div>
+        </div>
+
+        <footer class="py-12 border-t border-gray-100 text-sm text-text-muted">
+            <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between gap-10">
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark text-[1.5rem] font-bold uppercase mb-4">ADVISOR</h4>
+                    <p>Providing top-tier consulting solutions since 2010.</p>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark font-bold uppercase mb-5">Main</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark font-bold uppercase mb-5">Follow Us</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark font-bold uppercase mb-5">Contact</h4>
+                    <ul class="space-y-2">
+                        <li>info@advisor-example.com</li>
+                        <li>+1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</body>
+
+</html>
