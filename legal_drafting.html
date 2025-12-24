@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Drafting & Documentation - Advisor</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0f2e1b',
+                        'primary': '#1a4d2e',
+                        'primary-light': '#4f7e5f',
+                        'accent': '#d4e157',
+                        'accent-light': '#cedd9a',
+                        'text-dark': '#121212',
+                        'text-muted': '#888888',
+                        'light-bg': '#f9f9f9',
+                    },
+                    fontFamily: {
+                        'sans': ['Lexend', 'sans-serif'],
+                        'script': ['Dancing Script', 'cursive'],
+                    },
+                    boxShadow: {
+                        'soft': '0 5px 20px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 30px rgba(0, 0, 0, 0.08)',
+                        'glow': '0 0 20px rgba(212, 225, 87, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-text-dark antialiased bg-white selection:bg-accent selection:text-primary-dark">
+
+    <!-- Header (Copied from index.html) -->
+    <header class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-300">
+        <nav
+            class="relative flex justify-between items-center bg-white/90 backdrop-blur-md px-8 py-3 rounded-full max-w-5xl mx-4 lg:mx-auto shadow-soft border border-white/20">
+            <a href="index.html" class="font-bold text-xl uppercase tracking-wide text-primary-dark">
+                A<span class="text-primary">D</span>VISOR
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">Services</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">Case Study</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:block bg-primary text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md">
+                    Get in Touch
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-primary-dark text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu"
+                class="absolute top-full left-0 w-full bg-white rounded-2xl shadow-lg mt-2 p-6 hidden flex-col gap-4 text-center transform origin-top transition-all duration-300 z-50 border border-gray-100">
+                <a href="index.html" class="text-text-dark font-medium hover:text-primary transition-colors">Home</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">About</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Services</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Case Study</a>
+                <button
+                    class="bg-primary text-white text-sm font-semibold py-3 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md w-full">
+                    Get in Touch
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        }
+    </script>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-16 px-6 max-w-7xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-black text-primary-dark uppercase leading-none mb-4 tracking-tight">
+            Legal Drafting &<br>Documentation
+        </h1>
+        <p class="text-right text-[10px] uppercase tracking-widest text-text-muted max-w-xs ml-auto">
+            MOA, POA, BOR, Agreements,<br>Contracts and Legal Reports.
+        </p>
+    </section>
+
+    <!-- Introduction Text -->
+    <section class="py-12 px-6 max-w-7xl mx-auto">
+        <div class="max-w-xl">
+            <div class="mb-2 text-2xl text-[#cedd9a] font-script">At</div>
+            <p class="text-sm font-bold text-gray-500 uppercase leading-relaxed text-justify tracking-wide">
+                At Al Mostashar Al Dhaki, we provide professional legal drafting and documentation services to ensure
+                your business and personal legal needs are met with precision and compliance. Our team of experienced
+                legal professionals specialises in preparing documents that adhere to UAE laws and international
+                standards, helping you avoid costly errors and delays.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+
+            <!-- Items 1 -->
+            <div
+                class="group h-[300px] flex flex-col rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <div class="bg-primary-dark text-white p-8 flex-1">
+                    <h3 class="text-xl font-bold uppercase mb-4">Memorandum of<br>Association</h3>
+                    <p class="text-[10px] text-white/60 leading-relaxed">
+                        Drafting MOAs for company formation, amendments, and restructuring, ensuring clarity and
+                        compliance with regulatory requirements.
+                    </p>
+                </div>
+                <div class="h-24 bg-[#dbe7cd]"></div>
+            </div>
+
+            <!-- Items 2 -->
+            <div
+                class="group h-[300px] flex flex-col rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <div class="bg-primary-dark text-white p-8 flex-1">
+                    <h3 class="text-xl font-bold uppercase mb-4">Power of Attorney<br>(POA)</h3>
+                    <p class="text-[10px] text-white/60 leading-relaxed">
+                        Preparing POAs for various purposes, including property transactions, business representation,
+                        and personal authorization.
+                    </p>
+                </div>
+                <div class="h-24 bg-[#dbe7cd]"></div>
+            </div>
+
+            <!-- Items 3 -->
+            <div
+                class="group h-[300px] flex flex-col rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <div class="bg-primary-dark text-white p-8 flex-1">
+                    <h3 class="text-xl font-bold uppercase mb-4">Board of<br>Resolution (BOR)</h3>
+                    <p class="text-[10px] text-white/60 leading-relaxed">
+                        Drafting resolutions for corporate decisions, shareholder approvals, and governance matters.
+                    </p>
+                </div>
+                <div class="h-24 bg-[#dbe7cd]"></div>
+            </div>
+
+            <!-- Items 4 -->
+            <div
+                class="group h-[300px] flex flex-col rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <div class="bg-primary-dark text-white p-8 flex-1">
+                    <h3 class="text-xl font-bold uppercase mb-4">Agreements &<br>Contracts</h3>
+                    <p class="text-[10px] text-white/60 leading-relaxed">
+                        Creating customised agreements for partnerships, employment, sales, services, and other
+                        commercial arrangements.
+                    </p>
+                </div>
+                <div class="h-24 bg-[#dbe7cd]"></div>
+            </div>
+
+            <!-- Items 5 -->
+            <div
+                class="group h-[300px] flex flex-col rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <div class="bg-primary-dark text-white p-8 flex-1">
+                    <h3 class="text-xl font-bold uppercase mb-4">Legal Reports &<br>Opinions</h3>
+                    <p class="text-[10px] text-white/60 leading-relaxed">
+                        Providing detailed legal reports and advisory opinions to support decision-making and
+                        compliance.
+                    </p>
+                </div>
+                <div class="h-24 bg-[#dbe7cd]"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Stand Out Section -->
+    <section class="bg-[#eff5f0] py-24 px-6 mt-12">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-center uppercase text-primary-dark mb-16">
+                Why <span class="font-script text-4xl text-gray-400 normal-case mx-2">Our</span> Legal Drafting Services
+                Stand Out
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <!-- Box 1 -->
+                <div class="bg-[#dbe7cd] p-8 rounded-xl min-h-[160px] relative">
+                    <div class="absolute top-4 right-4 text-2xl text-primary-dark"><i
+                            class="fa-solid fa-file-circle-check"></i></div>
+                    <h4 class="text-sm font-bold text-primary-dark uppercase mb-2">Accuracy &<br>Compliance</h4>
+                    <p class="text-[10px] text-primary-dark/80">Every document is drafted in line with UAE laws to
+                        ensure validity and enforceability.</p>
+                </div>
+
+                <!-- Box 2 -->
+                <div class="bg-primary-dark p-8 rounded-xl min-h-[160px] relative text-white">
+                    <div class="absolute bottom-4 right-4 text-2xl text-[#cedd9a]"><i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="text-sm font-bold uppercase mb-2">Efficiency</h4>
+                    <p class="text-[10px] text-white/70">We deliver high-quality drafts within agreed timelines.</p>
+                </div>
+
+                <!-- Box 3 -->
+                <div class="bg-primary-dark p-8 rounded-xl min-h-[160px] relative text-white">
+                    <div class="absolute top-4 right-4 text-2xl text-[#cedd9a]"><i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <h4 class="text-sm font-bold uppercase mb-2">Customisation</h4>
+                    <p class="text-[10px] text-white/70">We tailor each document to your specific requirements, ensuring
+                        relevance and clarity.</p>
+                </div>
+
+                <!-- Box 4 -->
+                <div class="bg-[#dbe7cd] p-8 rounded-xl min-h-[160px] relative">
+                    <div class="absolute bottom-4 right-4 text-2xl text-primary-dark"><i
+                            class="fa-solid fa-user-lock"></i></div>
+                    <h4 class="text-sm font-bold text-primary-dark uppercase mb-2">Confidentiality</h4>
+                    <p class="text-[10px] text-primary-dark/80">Your sensitive information is handled with the highest
+                        level of security.</p>
+                </div>
+            </div>
+
+            <div class="mt-20 text-center max-w-3xl mx-auto">
+                <p class="text-xs font-medium text-text-dark leading-relaxed">
+                    Whether you are setting up a new business, managing corporate governance, or entering into
+                    agreements, AL MOSTASHAR AL DHAKI ensures your legal documentation is precise, enforceable, and
+                    fully compliant.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (From index.html) -->
+    <section class="pb-0">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-accent-light py-20 text-center rounded-[20px] mb-12">
+                <h2 class="text-[3rem] font-[300] text-primary-dark mb-8 leading-tight">LET'S WORK<br>TOGETHER</h2>
+                <button
+                    class="bg-primary-dark text-white py-4 px-10 rounded-full text-base hover:bg-black transition-colors">Start
+                    a Project</button>
+            </div>
+        </div>
+
+        <footer class="py-12 border-t border-gray-100 text-sm text-text-muted">
+            <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between gap-10">
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark text-[1.5rem] font-bold uppercase mb-4">ADVISOR</h4>
+                    <p>Providing top-tier consulting solutions since 2010.</p>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark font-bold uppercase mb-5">Main</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark font-bold uppercase mb-5">Follow Us</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark font-bold uppercase mb-5">Contact</h4>
+                    <ul class="space-y-2">
+                        <li>info@advisor-example.com</li>
+                        <li>+1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</body>
+
+</html>
