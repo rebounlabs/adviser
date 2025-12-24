@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notarisation Support - Advisor</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0f2e1b',
+                        'primary': '#1a4d2e',
+                        'primary-light': '#4f7e5f',
+                        'accent': '#d4e157',
+                        'accent-light': '#cedd9a',
+                        'text-dark': '#121212',
+                        'text-muted': '#888888',
+                        'light-bg': '#f9f9f9',
+                    },
+                    fontFamily: {
+                        'sans': ['Lexend', 'sans-serif'],
+                        'script': ['Dancing Script', 'cursive'],
+                    },
+                    boxShadow: {
+                        'soft': '0 5px 20px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 30px rgba(0, 0, 0, 0.08)',
+                        'glow': '0 0 20px rgba(212, 225, 87, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-text-dark antialiased bg-white selection:bg-accent selection:text-primary-dark">
+
+    <!-- Header (Copied from index.html) -->
+    <header class="fixed top-0 left-0 w-full z-50 py-5 transition-all duration-300">
+        <nav
+            class="relative flex justify-between items-center bg-white/90 backdrop-blur-md px-8 py-3 rounded-full max-w-5xl mx-4 lg:mx-auto shadow-soft border border-white/20">
+            <a href="index.html" class="font-bold text-xl uppercase tracking-wide text-primary-dark">
+                A<span class="text-primary">D</span>VISOR
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">Services</a></li>
+                <li><a href="#" class="hover:text-primary transition-colors">Case Study</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:block bg-primary text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md">
+                    Get in Touch
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-primary-dark text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu"
+                class="absolute top-full left-0 w-full bg-white rounded-2xl shadow-lg mt-2 p-6 hidden flex-col gap-4 text-center transform origin-top transition-all duration-300 z-50 border border-gray-100">
+                <a href="index.html" class="text-text-dark font-medium hover:text-primary transition-colors">Home</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">About</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Services</a>
+                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Case Study</a>
+                <button
+                    class="bg-primary text-white text-sm font-semibold py-3 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md w-full">
+                    Get in Touch
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        }
+    </script>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-16 px-6 max-w-7xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-black text-primary-dark uppercase leading-none mb-4 tracking-tight">
+            Notarisation<br>Support
+        </h1>
+        <p class="text-right text-[10px] uppercase tracking-widest text-text-muted max-w-xs ml-auto leading-relaxed">
+            Facilitation of document<br>notarisation for local and<br>international compliance.
+        </p>
+    </section>
+
+    <!-- Intro Text -->
+    <section class="py-12 px-6 max-w-7xl mx-auto text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="mb-2 text-2xl text-[#cedd9a] font-script">At</div>
+            <p class="text-xs font-bold text-gray-500 uppercase leading-relaxed tracking-wide">
+                At Al Mostashar Al Dhaki, we provide professional notarisation support services collaborated with
+                dedicated notaries to ensure your documents are legally recognised and compliant for both local and
+                international use. Our goal is to make the notarisation process simple, efficient, and stress-free for
+                individuals and businesses.
+            </p>
+        </div>
+    </section>
+
+    <!-- Dark Services Section -->
+    <section class="bg-primary-dark text-white py-24">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16">
+            <!-- Left: Placeholder Card -->
+            <div class="bg-gray-300 rounded-[3rem] w-full h-[500px] lg:h-auto"></div>
+
+            <!-- Right: Services Grid -->
+            <div>
+                <h2 class="text-sm font-bold text-white/50 uppercase tracking-widest mb-12 flex items-center gap-2">
+                    <span class="font-script text-2xl text-white/80 normal-case">Our</span> Notarisation Services
+                    Include
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12">
+                    <!-- Service 1 -->
+                    <div class="group border-b border-white/20 pb-8 hover:border-[#cedd9a] transition-colors">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#cedd9a] flex items-center justify-center text-primary-dark text-lg mb-4">
+                            <i class="fa-solid fa-stamp"></i>
+                        </div>
+                        <h3 class="text-sm font-bold uppercase mb-2">Legal Document Notarisation</h3>
+                        <p class="text-white/60 text-[10px] leading-relaxed mb-4">
+                            Notarisation of affidavits, declarations, powers of attorney, and other legally binding
+                            documents.
+                        </p>
+                        <div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-arrow-right-long text-lg"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="group border-b border-white/20 pb-8 hover:border-[#cedd9a] transition-colors">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#cedd9a] flex items-center justify-center text-primary-dark text-lg mb-4">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <h3 class="text-sm font-bold uppercase mb-2">Corporate Documentation</h3>
+                        <p class="text-white/60 text-[10px] leading-relaxed mb-4">
+                            Support for company bylaws, resolutions, and commercial agreements requiring notarisation.
+                        </p>
+                        <div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-arrow-right-long text-lg"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="group border-b border-white/20 pb-8 hover:border-[#cedd9a] transition-colors">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#cedd9a] flex items-center justify-center text-primary-dark text-lg mb-4">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <h3 class="text-sm font-bold uppercase mb-2">Personal Documents</h3>
+                        <p class="text-white/60 text-[10px] leading-relaxed mb-4">
+                            Facilitation for educational certificates, birth certificates, and marriage certificates.
+                        </p>
+                        <div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-arrow-right-long text-lg"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="group border-b border-white/20 pb-8 hover:border-[#cedd9a] transition-colors">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#cedd9a] flex items-center justify-center text-primary-dark text-lg mb-4">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="text-sm font-bold uppercase mb-2">International Compliance</h3>
+                        <p class="text-white/60 text-[10px] leading-relaxed mb-4">
+                            Ensuring documents comply with international standards for cross-border validity.
+                        </p>
+                        <div class="flex justify-end opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-arrow-right-long text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-primary-dark uppercase mb-20 text-center max-w-2xl mx-auto leading-tight">
+            Why Choose Our<br>Notarisation Support?
+        </h2>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 border-t border-b border-gray-200 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <!-- Box 1 -->
+            <div class="py-16 px-8 text-center flex flex-col items-center">
+                <h4 class="text-sm font-bold uppercase mb-4 text-primary-dark">Expert<br>Guidance</h4>
+                <p class="text-[10px] text-gray-500 max-w-[200px]">
+                    We ensure documents meet legal requirements to avoid rejection or delays.
+                </p>
+            </div>
+            <!-- Box 2 -->
+            <div class="py-16 px-8 text-center flex flex-col items-center">
+                <h4 class="text-sm font-bold uppercase mb-4 text-primary-dark">Efficiency</h4>
+                <p class="text-[10px] text-gray-500 max-w-[200px]">
+                    We streamline the process to save you time and reduce administrative burden.
+                </p>
+            </div>
+            <!-- Box 3 -->
+            <div class="py-16 px-8 text-center flex flex-col items-center">
+                <h4 class="text-sm font-bold uppercase mb-4 text-primary-dark">Confidentiality</h4>
+                <p class="text-[10px] text-gray-500 max-w-[200px]">
+                    Your sensitive information is handled with the utmost security and privacy.
+                </p>
+            </div>
+        </div>
+        <!-- Bottom Box (Centered) -->
+        <div
+            class="border-b border-l border-r border-gray-200 max-w-md mx-auto py-16 px-8 text-center flex flex-col items-center">
+            <h4 class="text-sm font-bold uppercase mb-4 text-primary-dark">End-to-End<br>Assistance</h4>
+            <p class="text-[10px] text-gray-500 max-w-[200px]">
+                From document preparation to final attestation, we manage everything.
+            </p>
+        </div>
+
+        <div class="mt-20 text-center max-w-3xl mx-auto">
+            <p class="text-xs font-medium text-text-dark leading-relaxed">
+                Whether you need notarisation for business agreements, property transactions, or personal
+                authorisations, AL MOSTASHAR AL DHAKI ensures a smooth and compliant process every time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer (From index.html) -->
+    <section class="pb-0">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-accent-light py-20 text-center rounded-[20px] mb-12">
+                <h2 class="text-[3rem] font-[300] text-primary-dark mb-8 leading-tight">LET'S WORK<br>TOGETHER</h2>
+                <button
+                    class="bg-primary-dark text-white py-4 px-10 rounded-full text-base hover:bg-black transition-colors">Start
+                    a Project</button>
+            </div>
+        </div>
+
+        <footer class="py-12 border-t border-gray-100 text-sm text-text-muted">
+            <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between gap-10">
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark text-[1.5rem] font-bold uppercase mb-4">ADVISOR</h4>
+                    <p>Providing top-tier consulting solutions since 2010.</p>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark font-bold uppercase mb-5">Main</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark font-bold uppercase mb-5">Follow Us</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-text-dark font-bold uppercase mb-5">Contact</h4>
+                    <ul class="space-y-2">
+                        <li>info@advisor-example.com</li>
+                        <li>+1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</body>
+
+</html>
