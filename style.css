@@ -1,0 +1,14 @@
+/* 
+   Legacy styles have been migrated to Tailwind CSS in index.html.
+   This file is kept minimal for font imports or specific overrides not handled by Tailwind config.
+*/
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700&display=swap');
+
+/* Optional: Any custom global resets if Tailwind's preflight isn't enough, 
+   but usually Tailwind handles this well. */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
