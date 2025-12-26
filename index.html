@@ -83,17 +83,16 @@
 
             <!-- Desktop Menu -->
             <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-                <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
-                <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
-                <li><a href="#" class="hover:text-primary transition-colors">Services</a></li>
-                <li><a href="#" class="hover:text-primary transition-colors">Case Study</a></li>
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="explore_services.html" class="hover:text-primary transition-colors">Services</a></li>
             </ul>
 
             <div class="flex items-center gap-4">
-                <button
+                <a href="contact.html"
                     class="hidden md:block bg-primary text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md">
                     Get in Touch
-                </button>
+                </a>
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-primary-dark text-xl focus:outline-none">
                     <i class="fa-solid fa-bars"></i>
@@ -103,14 +102,14 @@
             <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu"
                 class="absolute top-full left-0 w-full bg-white rounded-2xl shadow-lg mt-2 p-6 hidden flex-col gap-4 text-center transform origin-top transition-all duration-300 z-50 border border-gray-100">
-                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Home</a>
-                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">About</a>
-                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Services</a>
-                <a href="#" class="text-text-dark font-medium hover:text-primary transition-colors">Case Study</a>
-                <button
-                    class="bg-primary text-white text-sm font-semibold py-3 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md w-full">
+                <a href="index.html" class="text-text-dark font-medium hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="text-text-dark font-medium hover:text-primary transition-colors">About</a>
+                <a href="explore_services.html"
+                    class="text-text-dark font-medium hover:text-primary transition-colors">Services</a>
+                <a href="contact.html"
+                    class="bg-primary text-white text-sm font-semibold py-3 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md w-full block">
                     Get in Touch
-                </button>
+                </a>
             </div>
         </nav>
     </header>
@@ -144,31 +143,30 @@
         <!-- Background Gradients -->
         <div class="absolute inset-0 pointer-events-none opacity-40">
             <div
-                class="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-gradient-to-b from-primary to-transparent blur-[80px]">
+                class="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-gradient-to-b from-blue-100 to-transparent blur-[80px]">
             </div>
             <div
-                class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-primary to-transparent blur-[100px]">
+                class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-blue-50 to-transparent blur-[100px]">
             </div>
         </div>
 
         <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
-            <img src="https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?q=80&w=2079&auto=format&fit=crop"
-                alt="Background - International Languages & Flags" class="w-full h-full object-cover">
+        <div class="absolute inset-0 z-0 opacity-10 mix-blend-multiply">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                alt="Modern Business Architecture" class="w-full h-full object-cover grayscale">
         </div>
 
         <!-- Hero Content -->
         <div class="relative z-10 text-center -mt-20">
             <h1
-                class="text-5xl md:text-8xl font-cairo font-bold text-white text-center leading-none drop-shadow-lg mb-2">
+                class="text-6xl md:text-9xl font-cairo font-bold text-white text-center leading-none drop-shadow-2xl mb-4">
                 المستشار الذكي
             </h1>
             <h2
-                class="text-xl md:text-3xl font-sans font-medium text-white/90 uppercase tracking-[0.2em] md:tracking-[0.4em] drop-shadow-md mb-6">
+                class="text-2xl md:text-4xl font-['Lexend'] font-bold text-white uppercase tracking-[0.2em] md:tracking-[0.5em] drop-shadow-lg mb-8">
                 SmartAdviser
             </h2>
-            <p
-                class="text-sm md:text-lg text-white/80 font-light max-w-2xl mx-auto leading-relaxed px-4 drop-shadow-md">
+            <p class="text-base md:text-xl text-white/80 font-light max-w-3xl mx-auto leading-relaxed px-6">
                 Providing end-to-end support for documentation, legal formalities, and international requirements with
                 accuracy and reliability.
             </p>
@@ -420,133 +418,68 @@
         </div>
     </section>
 
-
-    <!-- Case Studies Section -->
-    <section class="py-24 bg-primary-dark text-white text-center">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-6 text-white uppercase">Case Studies</h2>
-            <p class="text-white/60 max-w-2xl mx-auto mb-16">See how we've helped businesses achieve their goals through
-                our expert services.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project Cards -->
-                <div
-                    class="bg-white rounded-[20px] overflow-hidden flex h-[200px] hover:shadow-hover transition-all group text-left">
-                    <div class="p-8 w-3/5 text-text-dark flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold mb-2 uppercase">LOREM</h3>
-                        <p class="text-text-muted text-sm mb-6">A great project description goes here. Concise and
-                            clear.</p>
-                        <a href="#"
-                            class="text-xs font-bold uppercase flex items-center gap-2 group-hover:gap-4 group-hover:text-primary transition-all">
-                            Full Case Study <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="w-2/5 h-full bg-gray-200 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=300"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            alt="Project 1">
-                    </div>
-                </div>
-
-                <div
-                    class="bg-white rounded-[20px] overflow-hidden flex h-[200px] hover:shadow-hover transition-all group text-left">
-                    <div class="p-8 w-3/5 text-text-dark flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold mb-2 uppercase">IPSUM</h3>
-                        <p class="text-text-muted text-sm mb-6">Another successful collaboration with amazing results.
-                        </p>
-                        <a href="#"
-                            class="text-xs font-bold uppercase flex items-center gap-2 group-hover:gap-4 group-hover:text-primary transition-all">
-                            Full Case Study <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="w-2/5 h-full bg-gray-200 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=300"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            alt="Project 2">
-                    </div>
-                </div>
-
-                <div
-                    class="bg-white rounded-[20px] overflow-hidden flex h-[200px] hover:shadow-hover transition-all group text-left">
-                    <div class="p-8 w-3/5 text-text-dark flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold mb-2 uppercase">DOLOR</h3>
-                        <p class="text-text-muted text-sm mb-6">Transforming ideas into reality with precision.</p>
-                        <a href="#"
-                            class="text-xs font-bold uppercase flex items-center gap-2 group-hover:gap-4 group-hover:text-primary transition-all">
-                            Full Case Study <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="w-2/5 h-full bg-gray-200 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=300"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            alt="Project 3">
-                    </div>
-                </div>
-
-                <div
-                    class="bg-white rounded-[20px] overflow-hidden flex h-[200px] hover:shadow-hover transition-all group text-left">
-                    <div class="p-8 w-3/5 text-text-dark flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold mb-2 uppercase">SIT AMET</h3>
-                        <p class="text-text-muted text-sm mb-6">Strategic consulting for sustainable growth.</p>
-                        <a href="#"
-                            class="text-xs font-bold uppercase flex items-center gap-2 group-hover:gap-4 group-hover:text-primary transition-all">
-                            Full Case Study <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="w-2/5 h-full bg-gray-200 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=300"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            alt="Project 4">
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-12">
-                <button
-                    class="border border-white/30 text-white bg-transparent py-3 px-8 rounded-full text-sm hover:bg-white hover:text-primary-dark transition-all">
-                    View All Projects
-                </button>
-            </div>
+    <!-- About Us Section -->
+    <section class="py-24 bg-primary-dark text-white relative overflow-hidden">
+        <!-- Background Decoration -->
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none">
         </div>
-    </section>
 
-    <!-- Yearly Growth Section -->
-    <section class="py-24 bg-light-bg">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center uppercase">Yearly Growth</h2>
-
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="flex-1">
-                    <div class="text-[5rem] font-[300] leading-none text-primary-dark">72%</div>
-                    <p class="text-text-muted mb-4 uppercase tracking-wider text-sm">Average Annual Growth</p>
-                    <div class="text-[2.5rem] font-[300] uppercase tracking-widest mb-6">Increase</div>
-                    <p class="text-text-muted leading-relaxed">Our consistent performance strategies have helped clients
-                        achieve remarkable growth year over year.</p>
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16 relative z-10">
+            <!-- Text Content -->
+            <div class="flex-1">
+                <h4 class="text-accent font-bold uppercase tracking-widest mb-4">Who We Are</h4>
+                <h2 class="text-4xl md:text-5xl font-['Lexend'] font-bold mb-8 leading-tight text-white">
+                    Navigating
+                    Complexity,<br>Delivering Success.</h2>
+                <div class="space-y-6 text-white/80 leading-relaxed font-light text-lg">
+                    <p>
+                        <strong class="text-white">SmartAdviser</strong> is your dedicated partner for navigating
+                        the
+                        intricate landscape of government regulations, legal formalities, and international business
+                        setup. We bridge the gap between bureaucracy and your goals.
+                    </p>
+                    <p>
+                        From <span class="text-white border-b border-accent/50">Company Formation</span> in the
+                        UAE &
+                        KSA to seamless <span class="text-white border-b border-accent/50">Visa Support</span>
+                        and
+                        precise <span class="text-white border-b border-accent/50">Legal Drafting</span>, our
+                        expert
+                        team ensures every document and procedure is handled with accuracy and speed. We take care of
+                        the details so you can focus on growth.
+                    </p>
                 </div>
 
-                <div class="flex-[1.2] w-full flex flex-col gap-4">
-                    <!-- Chart Bars -->
-                    <div
-                        class="flex justify-between items-center h-12 px-6 font-semibold text-sm bg-accent-light w-full text-text-dark rounded-r-md">
-                        <span>2024</span> <span>2.8M</span>
+                <div class="mt-10 flex gap-6">
+                    <div class="flex flex-col gap-1">
+                        <span class="text-4xl font-light text-accent">15+</span>
+                        <span class="text-xs uppercase tracking-wider opacity-60">Years Experience</span>
                     </div>
-                    <div
-                        class="flex justify-between items-center h-12 px-6 font-semibold text-sm bg-primary w-[85%] text-white rounded-r-md">
-                        <span>2023</span> <span>2.1M</span>
-                    </div>
-                    <div
-                        class="flex justify-between items-center h-12 px-6 font-semibold text-sm bg-primary-light w-[70%] text-white rounded-r-md">
-                        <span>2022</span> <span>1.8M</span>
-                    </div>
-                    <div
-                        class="flex justify-between items-center h-12 px-6 font-semibold text-sm bg-primary-dark w-[55%] text-white rounded-r-md">
-                        <span>2021</span> <span>1.4M</span>
-                    </div>
-                    <div
-                        class="flex justify-between items-center h-12 px-6 font-semibold text-sm bg-accent w-[40%] text-text-dark rounded-r-md">
-                        <span>2020</span> <span>1.1M</span>
+                    <div class="w-px bg-white/20 h-12"></div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-4xl font-light text-accent">5k+</span>
+                        <span class="text-xs uppercase tracking-wider opacity-60">Clients Served</span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Image/Visual -->
+            <div class="flex-1 relative">
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
+                        alt="About SmartAdviser Team"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+
+                    <!-- Overlay Card -->
+                    <div
+                        class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
+                        <p class="text-sm font-medium">"Efficiency and reliability are at the core of everything we do."
+                        </p>
+                    </div>
+                </div>
+                <!-- Decorative element -->
+                <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-xl"></div>
             </div>
         </div>
     </section>
@@ -639,66 +572,7 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 text-center uppercase">Recent Blog Updates</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="flex items-center gap-4">
-                    <div class="w-[120px] h-[100px] rounded-md overflow-hidden shrink-0">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=300"
-                            class="w-full h-full object-cover" alt="Blog">
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm mb-2 leading-snug">Building a Global Brand Identity</h4>
-                        <a href="#"
-                            class="text-xs font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all">Read
-                            More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <div class="w-[120px] h-[100px] rounded-md overflow-hidden shrink-0">
-                        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80&w=300"
-                            class="w-full h-full object-cover" alt="Blog">
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm mb-2 leading-snug">Future of Business & Branding</h4>
-                        <a href="#"
-                            class="text-xs font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all">Read
-                            More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <div class="w-[120px] h-[100px] rounded-md overflow-hidden shrink-0">
-                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=300"
-                            class="w-full h-full object-cover" alt="Blog">
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm mb-2 leading-snug">Design Thinking for Purpose Driven</h4>
-                        <a href="#"
-                            class="text-xs font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all">Read
-                            More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <div class="w-[120px] h-[100px] rounded-md overflow-hidden shrink-0">
-                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=300"
-                            class="w-full h-full object-cover" alt="Blog">
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm mb-2 leading-snug">Patron Sharing Branding for Lifetime</h4>
-                        <a href="#"
-                            class="text-xs font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all">Read
-                            More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <section class="pb-0">
