@@ -184,98 +184,291 @@
         </div>
     </section>
 
-    <!-- We Work With Section -->
-    <section class="py-32 bg-white text-center">
-        <div class="max-w-4xl mx-auto px-6 mb-20">
-            <h2 class="text-xl md:text-2xl font-normal text-gray-500 uppercase leading-relaxed tracking-wide">
-                <span class="font-script text-6xl text-[#cedd9a] normal-case mr-2">We</span> work with multiple
-                languages and guarantee that every translation is handled by qualified professionals who understand both
-                linguistic nuances and legal requirements. Whether you need translations for government submissions,
-                visa applications, or international business dealings, we ensure your documents are accepted by relevant
-                authorities.
-            </h2>
+    <!-- Calculator Section -->
+    <section class="py-24 bg-light-bg relative overflow-hidden">
+        <!-- Decorative Background Element -->
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
         </div>
 
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
-            <!-- Feature 1 -->
-            <div class="flex flex-col items-center">
-                <div
-                    class="w-24 h-24 rounded-full bg-[#cedd9a]/40 flex items-center justify-center text-4xl text-primary-dark mb-6">
-                    <i class="fa-solid fa-file-certificate"></i>
-                </div>
-                <h3 class="text-xs font-bold uppercase tracking-widest max-w-[200px]">Certified and Legally Recognised
-                    Translations</h3>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary-dark uppercase mb-4">Get an Instant Quote</h2>
+                <div class="h-1 w-20 bg-accent mx-auto rounded-full"></div>
+                <p class="mt-6 text-text-muted max-w-lg mx-auto">Estimate your translation costs instantly. Choose your
+                    language pair and enter the word count.</p>
             </div>
 
-            <!-- Feature 2 -->
-            <div class="flex flex-col items-center">
-                <div
-                    class="w-24 h-24 rounded-full bg-[#cedd9a]/40 flex items-center justify-center text-4xl text-primary-dark mb-6">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                </div>
-                <h3 class="text-xs font-bold uppercase tracking-widest max-w-[200px]">Fast Turnaround Times Without
-                    Compromising Quality</h3>
-            </div>
+            <div class="bg-white rounded-[2rem] shadow-soft p-8 md:p-12 border border-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Inputs -->
+                    <div class="space-y-8">
+                        <div>
+                            <label
+                                class="block text-primary-dark font-bold uppercase text-xs tracking-wider mb-4">Language
+                                Pair</label>
+                            <div class="space-y-3">
+                                <label
+                                    class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer transition-all hover:border-accent hover:bg-green-50/30 group has-[:checked]:border-primary has-[:checked]:bg-green-50/50">
+                                    <input type="radio" name="rate" value="0.125"
+                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300" checked>
+                                    <span class="ml-3 text-text-dark font-medium group-hover:text-primary-dark">Arabic
+                                        <i class="fa-solid fa-arrow-right-arrow-left mx-2 text-xs text-accent"></i>
+                                        English</span>
+                                </label>
+                                <label
+                                    class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer transition-all hover:border-accent hover:bg-green-50/30 group has-[:checked]:border-primary has-[:checked]:bg-green-50/50">
+                                    <input type="radio" name="rate" value="0.325"
+                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300">
+                                    <span class="ml-3 text-text-dark font-medium group-hover:text-primary-dark">Other
+                                        Languages</span>
+                                </label>
+                            </div>
+                        </div>
 
-            <!-- Feature 3 -->
-            <div class="flex flex-col items-center">
-                <div
-                    class="w-24 h-24 rounded-full bg-[#cedd9a]/40 flex items-center justify-center text-4xl text-primary-dark mb-6">
-                    <i class="fa-solid fa-user-shield"></i>
-                </div>
-                <h3 class="text-xs font-bold uppercase tracking-widest max-w-[200px]">Confidential Handling of Sensitive
-                    Information</h3>
-            </div>
-        </div>
-    </section>
+                        <div>
+                            <label for="word-count"
+                                class="block text-primary-dark font-bold uppercase text-xs tracking-wider mb-4">Word
+                                Count</label>
+                            <div class="space-y-4">
+                                <div class="relative">
+                                    <input type="number" id="word-count" placeholder="0" min="0"
+                                        class="w-full bg-light-bg border border-gray-200 text-text-dark text-lg rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary block p-4 pl-4 transition-all outline-none">
+                                    <span
+                                        class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted text-sm font-medium">words</span>
+                                </div>
 
-    <!-- Footer -->
-    <footer class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-                <div class="md:col-span-1">
-                    <a href="#" class="font-bold text-2xl uppercase tracking-wide text-primary-dark block mb-6">
-                        A<span class="text-primary">D</span>VISOR.
-                    </a>
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-[200px]">
-                        We offer a comprehensive range of consulting services to meet needs.
-                    </p>
-                </div>
+                                <div class="relative">
+                                    <div class="absolute inset-0 flex items-center">
+                                        <div class="w-full border-t border-gray-200"></div>
+                                    </div>
+                                    <div class="relative flex justify-center text-xs uppercase">
+                                        <span class="bg-white px-2 text-text-muted">Or</span>
+                                    </div>
+                                </div>
 
-                <div>
-                    <h4 class="font-bold text-xs text-gray-400 uppercase tracking-widest mb-6">Company</h4>
-                    <ul class="space-y-4 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Case Studies</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Service</a></li>
-                    </ul>
-                </div>
+                                <div class="border-2 border-dashed border-gray-200 rounded-xl p-6 text-center hover:border-accent transition-colors bg-light-bg group cursor-pointer"
+                                    onclick="document.getElementById('pdf-upload').click()">
+                                    <input type="file" id="pdf-upload" accept=".pdf" class="hidden">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-white border border-gray-100 mx-auto flex items-center justify-center text-primary-dark mb-3 group-hover:scale-110 transition-transform shadow-sm">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    </div>
+                                    <p class="text-xs font-bold text-primary-dark">Upload PDF</p>
+                                    <p class="text-[0.6rem] text-text-muted mt-1">Auto-count words</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div>
-                    <h4 class="font-bold text-xs text-gray-400 uppercase tracking-widest mb-6">Support</h4>
-                    <ul class="space-y-4 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">404</a></li>
-                    </ul>
-                </div>
+                    <!-- Result -->
+                    <div
+                        class="bg-primary-dark text-white rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden">
+                        <!-- BG Decoration -->
+                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-accent/20 rounded-full blur-2xl"></div>
 
-                <div class="md:col-span-1">
-                    <h4 class="font-bold text-lg text-primary-dark uppercase mb-2">Subscribe to our newsletter</h4>
-                    <p class="text-gray-400 text-xs mb-6">Creative thinkers work collaboratively to bring</p>
-                    <div class="flex border border-gray-200 p-1 rounded-sm">
-                        <input type="email" placeholder="Enter Elements Address"
-                            class="flex-1 px-3 text-sm outline-none text-gray-600 placeholder:text-gray-300">
-                        <button
-                            class="bg-[#cedd9a] text-primary-dark text-xs font-bold px-6 py-2 rounded-sm hover:bg-accent transition-colors">Submit</button>
+                        <div>
+                            <h3 class="text-accent font-script text-3xl mb-1">Estimated Cost</h3>
+                            <p class="text-white/60 text-xs">Based on standard rates. Subject to final review.</p>
+                        </div>
+
+                        <div class="mt-8">
+                            <div class="flex items-baseline">
+                                <span class="text-2xl font-light text-accent mr-2">AED</span>
+                                <span id="total-cost" class="text-6xl font-bold tracking-tight">0.00</span>
+                            </div>
+                            <div class="h-px w-full bg-white/20 my-6"></div>
+                            <a href="contact.html"
+                                class="inline-flex items-center justify-center w-full bg-accent text-primary-dark font-bold py-4 rounded-xl hover:bg-white transition-all duration-300 group">
+                                Proceed with Order
+                                <i
+                                    class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="border-t border-gray-100 pt-8"></div>
         </div>
-    </footer>
+
+        <!-- PDF.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+        <script>
+            // Set worker
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const rateInputs = document.querySelectorAll('input[name="rate"]');
+                const wordCountInput = document.getElementById('word-count');
+                const totalCostDisplay = document.getElementById('total-cost');
+                const pdfUpload = document.getElementById('pdf-upload');
+
+                function calculateCost() {
+                    let rate = 0;
+                    // Find checked radio
+                    rateInputs.forEach(input => {
+                        if (input.checked) {
+                            rate = parseFloat(input.value);
+                        }
+                    });
+
+                    const wordCount = parseFloat(wordCountInput.value) || 0;
+                    const total = rate * wordCount;
+
+                    // Format to 2 decimal places
+                    const formattedTotal = total.toFixed(2);
+                    totalCostDisplay.textContent = formattedTotal;
+
+                    // Dynamic Font Scaling
+                    if (formattedTotal.length > 10) {
+                        totalCostDisplay.classList.remove('text-6xl');
+                        totalCostDisplay.classList.add('text-3xl');
+                    } else if (formattedTotal.length > 7) {
+                        totalCostDisplay.classList.remove('text-6xl');
+                        totalCostDisplay.classList.add('text-4xl');
+                    } else {
+                        totalCostDisplay.classList.add('text-6xl');
+                        totalCostDisplay.classList.remove('text-4xl', 'text-3xl');
+                    }
+                }
+
+                // Add event listeners
+                rateInputs.forEach(input => {
+                    input.addEventListener('change', calculateCost);
+                });
+
+                wordCountInput.addEventListener('input', calculateCost);
+
+                // PDF Upload Logic
+                pdfUpload.addEventListener('change', async function () {
+                    const file = this.files[0];
+                    if (!file) return;
+
+                    // Show loading state implies cursor waiting or similar
+                    wordCountInput.parentElement.classList.add('opacity-50');
+
+                    try {
+                        const arrayBuffer = await file.arrayBuffer();
+                        const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+                        let fullText = "";
+
+                        for (let i = 1; i <= pdf.numPages; i++) {
+                            const page = await pdf.getPage(i);
+                            const content = await page.getTextContent();
+                            const pageText = content.items.map(item => item.str).join(" ");
+                            fullText += pageText + " ";
+                        }
+
+                        // Simple word count
+                        const words = fullText.trim().split(/\s+/).length;
+
+                        wordCountInput.value = words;
+                        calculateCost();
+
+                    } catch (err) {
+                        console.error('Error reading PDF:', err);
+                        alert('Could not read PDF. Please enter word count manually.');
+                    } finally {
+                        wordCountInput.parentElement.classList.remove('opacity-50');
+                    }
+                });
+            });
+        </script>
+
+        <!-- We Work With Section -->
+        <section class="py-32 bg-white text-center">
+            <div class="max-w-4xl mx-auto px-6 mb-20">
+                <h2 class="text-xl md:text-2xl font-normal text-gray-500 uppercase leading-relaxed tracking-wide">
+                    <span class="font-script text-6xl text-[#cedd9a] normal-case mr-2">We</span> work with multiple
+                    languages and guarantee that every translation is handled by qualified professionals who understand
+                    both
+                    linguistic nuances and legal requirements. Whether you need translations for government submissions,
+                    visa applications, or international business dealings, we ensure your documents are accepted by
+                    relevant
+                    authorities.
+                </h2>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Feature 1 -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-24 h-24 rounded-full bg-[#cedd9a]/40 flex items-center justify-center text-4xl text-primary-dark mb-6">
+                        <i class="fa-solid fa-file-certificate"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest max-w-[200px]">Certified and Legally
+                        Recognised
+                        Translations</h3>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-24 h-24 rounded-full bg-[#cedd9a]/40 flex items-center justify-center text-4xl text-primary-dark mb-6">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest max-w-[200px]">Fast Turnaround Times Without
+                        Compromising Quality</h3>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-24 h-24 rounded-full bg-[#cedd9a]/40 flex items-center justify-center text-4xl text-primary-dark mb-6">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest max-w-[200px]">Confidential Handling of
+                        Sensitive
+                        Information</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 bg-primary-dark text-sm text-gray-400">
+            <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between gap-10">
+                <div class="w-full md:w-auto">
+                    <h4 class="text-white text-[1.5rem] font-bold uppercase mb-4">SmartAdviser</h4>
+                    <p class="max-w-xs text-xs leading-relaxed">AL MOSTASHAR AL DHAKI TRANSLATION SERVICES<br>
+                        <span class="opacity-70">Founder: Muhammed Noufal</span>
+                    </p>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-white font-bold uppercase mb-5">Main</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-accent transition-colors">About</a></li>
+                        <li><a href="explore_services.html" class="hover:text-accent transition-colors">Services</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-white font-bold uppercase mb-5">Address</h4>
+                    <p class="max-w-xs leading-relaxed text-xs">
+                        Office No: M03-4, Unispark offices,<br>
+                        Manazel Garhoud Building,<br>
+                        Garhoud, Dubai, UAE
+                    </p>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <h4 class="text-white font-bold uppercase mb-5">Contact</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="tel:0564092077" class="hover:text-accent transition-colors"><i
+                                    class="fa-solid fa-phone mr-2"></i>0564092077</a></li>
+                        <li><a href="mailto:smartadvisortrans@gmail.com" class="hover:text-accent transition-colors"><i
+                                    class="fa-solid fa-envelope mr-2"></i>smartadvisortrans@gmail.com</a></li>
+                        <li><a href="mailto:translations.almostashar@gmail.com"
+                                class="hover:text-accent transition-colors"><i
+                                    class="fa-solid fa-envelope mr-2"></i>translations.almostashar@gmail.com</a></li>
+                        <li><a href="mailto:mnoufalvs@hotmail.com" class="hover:text-accent transition-colors"><i
+                                    class="fa-solid fa-envelope mr-2"></i>mnoufalvs@hotmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
 
 </body>
 

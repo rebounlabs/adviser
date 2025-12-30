@@ -358,8 +358,8 @@
                     </div>
 
                     <div class="flex justify-between items-end">
-                        <span class="text-[0.6rem] uppercase tracking-wider text-white/60">Est. Price: $1,200</span>
-                        <button
+
+                        <button id="openEstimatorBtn"
                             class="bg-[#cedd9a] text-primary-dark py-2 px-6 rounded-full text-xs font-bold hover:bg-white transition-colors">Calculate</button>
                     </div>
                 </div>
@@ -395,50 +395,245 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="bg-accent-light py-20 text-center rounded-[20px] mb-12">
                 <h2 class="text-[3rem] font-[300] text-primary-dark mb-8 leading-tight">LET'S WORK<br>TOGETHER</h2>
-                <button
-                    class="bg-primary-dark text-white py-4 px-10 rounded-full text-base hover:bg-black transition-colors">Start
-                    a Project</button>
+                <a href="contact.html"
+                    class="bg-primary-dark text-white py-4 px-10 rounded-full text-base hover:bg-black transition-colors inline-block">Start
+                    a Project</a>
             </div>
         </div>
 
-        <footer class="py-12 border-t border-gray-100 text-sm text-text-muted">
+        <footer class="py-12 bg-primary-dark text-sm text-gray-400">
             <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between gap-10">
                 <div class="w-full md:w-auto">
-                    <h4 class="text-text-dark text-[1.5rem] font-bold uppercase mb-4">ADVISOR</h4>
-                    <p>Providing top-tier consulting solutions since 2010.</p>
+                    <h4 class="text-white text-[1.5rem] font-bold uppercase mb-4">SmartAdviser</h4>
+                    <p class="max-w-xs text-xs leading-relaxed">AL MOSTASHAR AL DHAKI TRANSLATION SERVICES<br>
+                        <span class="opacity-70">Founder: Muhammed Noufal</span>
+                    </p>
                 </div>
 
                 <div class="w-full md:w-auto">
-                    <h4 class="text-text-dark font-bold uppercase mb-5">Main</h4>
+                    <h4 class="text-white font-bold uppercase mb-5">Main</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
-                        <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
-                        <li><a href="explore_services.html" class="hover:text-primary transition-colors">Services</a>
+                        <li><a href="index.html" class="hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-accent transition-colors">About</a></li>
+                        <li><a href="explore_services.html" class="hover:text-accent transition-colors">Services</a>
                         </li>
-                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="contact.html" class="hover:text-accent transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="w-full md:w-auto">
-                    <h4 class="text-text-dark font-bold uppercase mb-5">Follow Us</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-primary transition-colors">LinkedIn</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Twitter</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
-                    </ul>
+                    <h4 class="text-white font-bold uppercase mb-5">Address</h4>
+                    <p class="max-w-xs leading-relaxed text-xs">
+                        Office No: M03-4, Unispark offices,<br>
+                        Manazel Garhoud Building,<br>
+                        Garhoud, Dubai, UAE
+                    </p>
                 </div>
 
                 <div class="w-full md:w-auto">
-                    <h4 class="text-text-dark font-bold uppercase mb-5">Contact</h4>
-                    <ul class="space-y-2">
-                        <li>info@advisor-example.com</li>
-                        <li>+1 (555) 123-4567</li>
+                    <h4 class="text-white font-bold uppercase mb-5">Contact</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="tel:0564092077" class="hover:text-accent transition-colors"><i
+                                    class="fa-solid fa-phone mr-2"></i>0564092077</a></li>
+                        <li><a href="mailto:smartadvisortrans@gmail.com" class="hover:text-accent transition-colors"><i
+                                    class="fa-solid fa-envelope mr-2"></i>smartadvisortrans@gmail.com</a></li>
+                        <li><a href="mailto:translations.almostashar@gmail.com"
+                                class="hover:text-accent transition-colors"><i
+                                    class="fa-solid fa-envelope mr-2"></i>translations.almostashar@gmail.com</a></li>
+                        <li><a href="mailto:mnoufalvs@hotmail.com" class="hover:text-accent transition-colors"><i
+                                    class="fa-solid fa-envelope mr-2"></i>mnoufalvs@hotmail.com</a></li>
                     </ul>
                 </div>
             </div>
         </footer>
     </section>
 
+    <!-- Estimator Modal -->
+    <div id="estimatorModal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/60 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl p-8 max-w-lg w-full mx-4 shadow-2xl relative">
+            <button id="closeEstimatorBtn"
+                class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors z-10">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <h3 class="text-2xl font-bold text-primary-dark mb-6 text-center">Estimate Cost</h3>
+
+            <div class="space-y-6">
+                <!-- Language Selection -->
+                <div>
+                    <label class="block text-primary-dark font-bold uppercase text-xs tracking-wider mb-3">Language
+                        Pair</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label
+                            class="flex flex-col items-center justify-center p-3 border border-gray-200 rounded-xl cursor-pointer transition-all hover:border-accent hover:bg-green-50/30 group has-[:checked]:border-primary has-[:checked]:bg-green-50/50 text-center">
+                            <input type="radio" name="modal-rate" value="0.125" class="hidden" checked>
+                            <span class="text-sm font-bold text-text-dark group-hover:text-primary-dark">Arabic <i
+                                    class="fa-solid fa-arrow-right-arrow-left text-accent mx-1 text-[10px]"></i>
+                                English</span>
+                            <span class="text-[0.6rem] text-text-muted mt-1">AED 0.125 / word</span>
+                        </label>
+                        <label
+                            class="flex flex-col items-center justify-center p-3 border border-gray-200 rounded-xl cursor-pointer transition-all hover:border-accent hover:bg-green-50/30 group has-[:checked]:border-primary has-[:checked]:bg-green-50/50 text-center">
+                            <input type="radio" name="modal-rate" value="0.325" class="hidden">
+                            <span class="text-sm font-bold text-text-dark group-hover:text-primary-dark">Other
+                                Languages</span>
+                            <span class="text-[0.6rem] text-text-muted mt-1">AED 0.325 / word</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Input Method -->
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <label class="block text-primary-dark font-bold uppercase text-xs tracking-wider">Word
+                            Count</label>
+                        <span class="text-[0.6rem] text-text-muted">Enter manually or upload PDF</span>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <input type="number" id="manual-word-count" placeholder="0"
+                            class="w-24 bg-light-bg border border-gray-200 rounded-lg px-3 py-2 text-center font-bold text-primary-dark focus:border-accent outline-none">
+
+                        <div class="flex-1 border border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:bg-light-bg transition-colors relative"
+                            onclick="document.getElementById('pdfInput').click()">
+                            <input type="file" id="pdfInput" accept=".pdf" class="hidden">
+                            <span class="text-xs text-gray-500"><i
+                                    class="fa-solid fa-cloud-arrow-up text-accent mr-2"></i>Upload PDF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="resultBox" class="bg-primary-dark text-white rounded-xl p-6 text-center">
+                    <p class="text-sm opacity-60 mb-1 uppercase tracking-wider">Estimated Result</p>
+                    <div class="flex items-baseline justify-center gap-2">
+                        <span class="text-lg font-light text-accent">AED</span>
+                        <span id="modal-result" class="text-4xl font-bold">0.00</span>
+                    </div>
+                </div>
+
+                <a href="contact.html"
+                    class="block w-full bg-accent text-primary-dark font-bold text-center py-3 rounded-xl hover:bg-[#dbe7cd] transition-colors">
+                    Get Official Quote
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF.js and Logic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        // Set worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        const openBtn = document.getElementById('openEstimatorBtn');
+        const closeBtn = document.getElementById('closeEstimatorBtn');
+        const modal = document.getElementById('estimatorModal');
+        const pdfInput = document.getElementById("pdfInput");
+        const manualInput = document.getElementById("manual-word-count");
+        const resultDisplay = document.getElementById("modal-result");
+        const rateInputs = document.querySelectorAll('input[name="modal-rate"]');
+
+        let currentWordCount = 0;
+
+        function updateCalculation() {
+            let rate = 0;
+            rateInputs.forEach(input => {
+                if (input.checked) rate = parseFloat(input.value);
+            });
+            const total = currentWordCount * rate;
+            const formattedTotal = total.toFixed(2);
+            resultDisplay.textContent = formattedTotal;
+
+            // Dynamic Font Scaling
+            if (formattedTotal.length > 10) {
+                resultDisplay.classList.remove('text-4xl');
+                resultDisplay.classList.add('text-2xl');
+            } else if (formattedTotal.length > 7) {
+                resultDisplay.classList.remove('text-4xl');
+                resultDisplay.classList.add('text-3xl');
+            } else {
+                resultDisplay.classList.add('text-4xl');
+                resultDisplay.classList.remove('text-3xl', 'text-2xl');
+            }
+        }
+
+        if (openBtn) {
+            openBtn.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+                // Reset
+                manualInput.value = '';
+                currentWordCount = 0;
+                updateCalculation();
+            });
+        }
+
+        // Close on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+
+        // Manual Input Listener
+        manualInput.addEventListener('input', function () {
+            currentWordCount = parseFloat(this.value) || 0;
+            updateCalculation();
+        });
+
+        // Rate Change Listener
+        rateInputs.forEach(input => {
+            input.addEventListener('change', updateCalculation);
+        });
+
+        // PDF Logic
+        pdfInput.addEventListener("change", async function () {
+            const file = this.files[0];
+            if (!file) return;
+
+            // Show loading
+            manualInput.parentElement.classList.add('opacity-50');
+
+            const reader = new FileReader();
+
+            reader.onload = async function () {
+                try {
+                    const typedArray = new Uint8Array(this.result);
+                    const pdf = await pdfjsLib.getDocument(typedArray).promise;
+                    let fullText = "";
+
+                    for (let i = 1; i <= pdf.numPages; i++) {
+                        const page = await pdf.getPage(i);
+                        const content = await page.getTextContent();
+                        const pageText = content.items.map(item => item.str).join(" ");
+                        fullText += pageText + " ";
+                    }
+
+                    // Word count
+                    const words = fullText.trim().split(/\s+/).length;
+
+                    // Update state
+                    currentWordCount = words;
+                    manualInput.value = words;
+                    updateCalculation();
+
+                } catch (err) {
+                    console.error(err);
+                    alert("Error reading PDF. Ensure it is a valid text PDF.");
+                } finally {
+                    manualInput.parentElement.classList.remove('opacity-50');
+                }
+            };
+
+            reader.readAsArrayBuffer(file);
+        });
+    </script>
 </body>
 
 </html>
