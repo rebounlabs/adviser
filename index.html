@@ -78,36 +78,46 @@
         <nav
             class="relative flex justify-between items-center bg-white/90 backdrop-blur-md px-8 py-3 rounded-full max-w-5xl mx-4 lg:mx-auto shadow-soft border border-white/20">
             <a href="index.html" class="flex items-center">
-                <img src="brand_logo.png" alt="Smart Advisor Logo" class="h-12 w-auto object-contain">
+                <img src="assets/brand_logo_new.png" alt="Smart Advisor Logo" class="h-12 w-auto object-contain">
             </a>
 
-            <!-- Desktop Menu -->
-            <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
-                <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
-                <li><a href="translation.html" class="hover:text-primary transition-colors">Services</a></li>
-            </ul>
+            <div class="flex items-center gap-8">
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                    <li><a href="translation.html" class="hover:text-primary transition-colors">Services</a></li>
+                </ul>
 
-            <div class="flex items-center gap-4">
-                <a href="contact.html"
-                    class="hidden md:block bg-primary text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md">
-                    Get in Touch
-                </a>
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-primary-dark text-xl focus:outline-none">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <div class="flex items-center gap-4">
+                    <a href="contact.html"
+                        class="hidden md:block bg-primary text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-primary-dark transition-all duration-300 shadow-md hover:scale-105 active:scale-95 hover:shadow-lg">
+                        Get in Touch
+                    </a>
+                    <!-- Mobile Menu Button with Custom Animation -->
+                    <button id="mobile-menu-btn"
+                        class="md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10 border border-primary/20 rounded-full focus:outline-none transition-all duration-300 active:scale-90 hover:bg-primary/5 z-50">
+                        <span id="bar1"
+                            class="block w-5 h-0.5 bg-primary-dark transition-all duration-300 ease-in-out origin-center"></span>
+                        <span id="bar2"
+                            class="block w-4 h-0.5 bg-primary-dark transition-all duration-300 ease-in-out"></span>
+                        <span id="bar3"
+                            class="block w-5 h-0.5 bg-primary-dark transition-all duration-300 ease-in-out origin-center"></span>
+                    </button>
+                </div>
             </div>
 
             <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu"
-                class="absolute top-full left-0 w-full bg-white rounded-2xl shadow-lg mt-2 p-6 hidden flex-col gap-4 text-center transform origin-top transition-all duration-300 z-50 border border-gray-100">
-                <a href="index.html" class="text-text-dark font-medium hover:text-primary transition-colors">Home</a>
-                <a href="about.html" class="text-text-dark font-medium hover:text-primary transition-colors">About</a>
+                class="absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl mt-4 p-6 flex flex-col gap-4 text-center transform origin-top transition-all duration-400 ease-[cubic-bezier(0.25,0.1,0.25,1)] z-50 border border-white/40 opacity-0 -translate-y-4 scale-95 blur-sm pointer-events-none">
+                <a href="index.html"
+                    class="mobile-nav-item opacity-0 translate-y-4 transition-all duration-500 ease-out text-text-dark font-medium hover:text-primary transition-colors text-lg py-2">Home</a>
+                <a href="about.html"
+                    class="mobile-nav-item opacity-0 translate-y-4 transition-all duration-500 ease-out text-text-dark font-medium hover:text-primary transition-colors text-lg py-2">About</a>
                 <a href="translation.html"
-                    class="text-text-dark font-medium hover:text-primary transition-colors">Services</a>
+                    class="mobile-nav-item opacity-0 translate-y-4 transition-all duration-500 ease-out text-text-dark font-medium hover:text-primary transition-colors text-lg py-2">Services</a>
                 <a href="contact.html"
-                    class="bg-primary text-white text-sm font-semibold py-3 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md w-full block">
+                    class="mobile-nav-item opacity-0 translate-y-4 transition-all duration-500 ease-out bg-primary text-white text-sm font-semibold py-3 px-6 rounded-full hover:bg-primary-dark transition-all shadow-md w-full block mt-2 active:scale-95">
                     Get in Touch
                 </a>
             </div>
@@ -118,19 +128,47 @@
         // Mobile Menu Toggle Logic
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
 
         if (mobileBtn && mobileMenu) {
             mobileBtn.addEventListener('click', () => {
-                const isHidden = mobileMenu.classList.contains('hidden');
+                const isClosed = mobileMenu.classList.contains('opacity-0');
 
-                if (isHidden) {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                    mobileBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                if (isClosed) {
+                    // Open Menu - Smooth Slide & Fade
+                    mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'scale-95', 'blur-sm', 'pointer-events-none');
+                    mobileMenu.classList.add('opacity-100', 'translate-y-0', 'scale-100', 'blur-0');
+
+                    // Animate Items Staggered
+                    mobileNavItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.remove('opacity-0', 'translate-y-4');
+                            item.classList.add('opacity-100', 'translate-y-0');
+                        }, 200 + (index * 100));
+                    });
+
+                    // Animate Button into X
+                    bar1.classList.add('rotate-45', 'translate-y-2');
+                    bar2.classList.add('opacity-0');
+                    bar3.classList.add('-rotate-45', '-translate-y-2');
                 } else {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                    mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                    // Close Menu - Smooth Slide & Fade
+                    mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'scale-100', 'blur-0');
+                    mobileMenu.classList.add('opacity-0', '-translate-y-4', 'scale-95', 'blur-sm', 'pointer-events-none');
+
+                    // Reset Items
+                    mobileNavItems.forEach(item => {
+                        item.classList.add('opacity-0', 'translate-y-4');
+                        item.classList.remove('opacity-100', 'translate-y-0');
+                    });
+
+                    // Animate Button back to Hamburger
+                    bar1.classList.remove('rotate-45', 'translate-y-2');
+                    bar2.classList.remove('opacity-0');
+                    bar3.classList.remove('-rotate-45', '-translate-y-2');
                 }
             });
         }
@@ -157,9 +195,9 @@
         </div>
 
         <!-- Hero Content -->
-        <div class="relative z-10 text-center -mt-20">
+        <div class="relative z-10 text-center w-full px-6">
             <h1
-                class="text-6xl md:text-9xl font-cairo font-bold text-white text-center leading-none drop-shadow-2xl mb-4">
+                class="text-6xl md:text-8xl font-cairo font-bold text-white text-center leading-none drop-shadow-2xl mb-4 tracking-normal md:tracking-wide md:ml-[-40px]">
                 المستشار الذكي
             </h1>
             <h2
