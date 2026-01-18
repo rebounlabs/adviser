@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/brand_logo_new.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advisor - Professional Consulting</title>
     <!-- Google Fonts -->
@@ -132,7 +133,7 @@
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                     <a href="contact.html"
-                        class="hidden md:block bg-primary text-white text-sm font-semibold py-2 px-6 rounded-full hover:bg-primary-dark transition-all duration-300 shadow-md hover:scale-105 active:scale-95 hover:shadow-lg">
+                        class="hidden md:block bg-[#1f4d36] text-white text-sm font-semibold py-3 px-8 rounded-full hover:bg-black transition-all duration-300 shadow-md hover:scale-105 active:scale-95 hover:shadow-lg">
                         Get in Touch
                     </a>
                     <!-- Mobile Menu Button with Custom Animation -->
@@ -281,7 +282,7 @@
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0 opacity-10 mix-blend-multiply">
             <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
-                alt="Modern Business Architecture" class="w-full h-full object-cover grayscale">
+                alt="Modern Business Architecture" class="w-full h-full object-grayscale">
         </div>
 
         <!-- Hero Content -->
@@ -299,6 +300,18 @@
                 end-to-end support for documentation, legal formalities, and international requirements with accuracy
                 and reliability.
             </p>
+
+            <!-- Action Buttons -->
+            <div class="mt-12 flex flex-col md:flex-row justify-center gap-6">
+                <a href="about.html"
+                    class="bg-[#e0e0e0] text-[#2a6645] font-bold py-4 px-10 rounded-[2rem] shadow-lg hover:bg-white transition-all duration-300 transform hover:-translate-y-1 text-lg min-w-[200px]">
+                    Learn More
+                </a>
+                <a href="contact.html"
+                    class="bg-[#e0e0e0] text-[#2a6645] font-bold py-4 px-10 rounded-[2rem] shadow-lg hover:bg-white transition-all duration-300 transform hover:-translate-y-1 text-lg min-w-[200px]">
+                    Get a Free Quote
+                </a>
+            </div>
         </div>
 
         <!-- Hero Footer Bar -->
@@ -314,8 +327,7 @@
             <div
                 class="absolute bottom-12 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 opacity-70 hover:opacity-100 transition-opacity pointer-events-none">
                 <span class="text-white text-[10px] uppercase tracking-[0.2em] font-light">Scroll</span>
-                <div
-                    class="w-5 h-8 md:w-6 md:h-10 border-2 border-white/50 rounded-full flex justify-center p-1 shadow-sm">
+                <div class="w-6 h-10 border-2 border-white/70 rounded-full flex justify-center pt-2 shadow-sm relative">
                     <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
                 </div>
             </div>
@@ -1177,8 +1189,7 @@
                 <!-- Blog Card 2 -->
                 <article class="group cursor-pointer">
                     <div class="relative overflow-hidden rounded-2xl mb-6 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1629904853716-6c0abdcc751d?q=80&w=2000&auto=format&fit=crop"
-                            alt="Certified Translation"
+                        <img src="assets/human_translation_1767943903766.png" alt="Certified Translation"
                             class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700">
                         <div
                             class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-bold text-primary-dark uppercase tracking-wide">
@@ -1197,8 +1208,7 @@
                 <!-- Blog Card 3 -->
                 <article class="group cursor-pointer">
                     <div class="relative overflow-hidden rounded-2xl mb-6 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1578574577315-3fbeb0ce88be?q=80&w=2088&auto=format&fit=crop"
-                            alt="Company Formation"
+                        <img src="assets/company_hero_1767945487859.png" alt="Company Formation"
                             class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700">
                         <div
                             class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-bold text-primary-dark uppercase tracking-wide">
@@ -1321,6 +1331,12 @@
             });
         });
     </script>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/971564092077" target="_blank"
+        class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-4xl shadow-soft hover:shadow-glow hover:scale-110 transition-all duration-300 transform hover:-translate-y-1"
+        title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 </body>
 
 </html>
